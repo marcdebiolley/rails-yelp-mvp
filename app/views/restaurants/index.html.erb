@@ -1,0 +1,28 @@
+<h1>All the restaurants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone number</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @restaurants.each do |resto| %>
+    <tr>
+      <td><%=link_to resto.name, restaurant_path(resto)  %></td>
+      <td><%=resto.address  %></td>
+      <td><%=resto.phone_number %></td>
+      <td><%=resto.category  %></td>
+      <!-- <td></td> -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>Create the a new restaurant</p>
+<p class="btn btn-danger"><%= link_to "create", new_restaurant_path%></p>
+
